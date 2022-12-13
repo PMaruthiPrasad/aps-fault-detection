@@ -13,3 +13,8 @@ pip install -r requirements.txt
 python main.py
 ```
 These are the chabges made by Maruthi is neuro lab
+ 
+ ### Download data set 
+ ```bash
+ wget https://raw.githubusercontent.com/avnyadav/sensor-fault-detection/main/aps_failure_training_set1.csv
+ ```
