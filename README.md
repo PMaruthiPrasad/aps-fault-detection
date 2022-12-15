@@ -18,3 +18,5 @@ These are the chabges made by Maruthi is neuro lab
  ```bash
  wget https://raw.githubusercontent.com/avnyadav/sensor-fault-detection/main/aps_failure_training_set1.csv
  ```
+
+ These are changed made by Maruthi in lab
