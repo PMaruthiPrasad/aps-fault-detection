@@ -20,7 +20,7 @@ def get_requirements()->List[str]:
 setup(
     name='sensor',
     version='0.0.1',
-    author='ineuron',
+    author='maruthi',
     author_email='pmaruthiprasad16@gmail.com',
     packages=find_packages(),
     install_requires=get_requirements(),
