@@ -3,7 +3,7 @@ from sensor.exception import SensorException
 from sensor.logger import logging
 from typing import Optional
 import os,sys 
-from sklearn.preprocessing import Pipeline
+from sklearn.pipeline import Pipeline
 import pandas as pd
 from sensor import utils
 import numpy as np
@@ -12,7 +12,7 @@ from imblearn.combine import SMOTETomek
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler
 from sensor.config import TARGET_COLUMN
-from config import TARGET_COLUMN
+from sensor.config import TARGET_COLUMN
 
 class DataTransformation:
 
