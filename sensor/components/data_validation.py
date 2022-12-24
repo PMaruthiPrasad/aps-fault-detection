@@ -5,7 +5,7 @@ from scipy.stats import ks_2samp
 from typing import Optional
 import os,sys 
 import pandas as pd
-from sensor import utils
+from sensor import util
 import numpy as np
 from sensor.config import TARGET_COLUMN
 
@@ -127,9 +127,9 @@ class DataValidation:
 
             exclude_columns = [TARGET_COLUMN]
             
-            base_df = utils.convert_columns_float(df=base_df, exclude_columns=exclude_columns)
-            train_df = utils.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
-            test_df = utils.convert_columns_float(df=test_df, exclude_columns=exclude_columns)
+            base_df = util.convert_columns_float(df=base_df, exclude_columns=exclude_columns)
+            train_df = util.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
+            test_df = util.convert_columns_float(df=test_df, exclude_columns=exclude_columns)
 
 
             logging.info(f"Is all required columns present in train df")
@@ -146,7 +146,7 @@ class DataValidation:
 
             #write the report
             logging.info("Write reprt in yaml file")
-            utils.write_yaml_file(file_path=self.data_validation_config.report_file_path,
+            util.write_yaml_file(file_path=self.data_validation_config.report_file_path,
             data=self.validation_error)
 
             data_validation_artifact = artifact_entity.DataValidationArtifact(report_file_path=self.data_validation_config.report_file_path,)

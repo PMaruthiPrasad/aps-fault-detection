@@ -5,7 +5,7 @@ from typing import Optional
 import os,sys 
 from sklearn.pipeline import Pipeline
 import pandas as pd
-from sensor import utils
+from sensor import util
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from imblearn.combine import SMOTETomek
@@ -82,17 +82,17 @@ class DataTransformation:
             test_arr = np.c_[input_feature_test_arr, target_feature_test_arr]
 
             #save numpy array
-            utils.save_numpy_array_data(file_path=self.data_transformation_config.transformed_train_path,
+            util.save_numpy_array_data(file_path=self.data_transformation_config.transformed_train_path,
                                         array=train_arr)
 
-            utils.save_numpy_array_data(file_path=self.data_transformation_config.transformed_test_path,
+            util.save_numpy_array_data(file_path=self.data_transformation_config.transformed_test_path,
                                         array=test_arr)
 
 
-            utils.save_object(file_path=self.data_transformation_config.transform_object_path,
+            util.save_object(file_path=self.data_transformation_config.transform_object_path,
              obj=transformation_pipleine)
 
-            utils.save_object(file_path=self.data_transformation_config.target_encoder_path,
+            util.save_object(file_path=self.data_transformation_config.target_encoder_path,
             obj=label_encoder)
 
             data_transformation_artifact = artifact_entity.DataTransformationArtifact(

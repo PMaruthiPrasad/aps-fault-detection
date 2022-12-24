@@ -4,7 +4,7 @@ from sensor.logger import logging
 from typing import Optional
 import os,sys 
 from xgboost import XGBClassifier
-from sensor import utils
+from sensor import util
 from sklearn.metrics import f1_score
 
 
@@ -43,8 +43,8 @@ class ModelTrainer:
     def initiate_model_trainer(self,)->artifact_entity.ModelTrainerArtifact:
         try:
             logging.info(f"Loading train and test array.")
-            train_arr = utils.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_train_path)
-            test_arr = utils.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_test_path)
+            train_arr = util.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_train_path)
+            test_arr = util.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_test_path)
 
             logging.info(f"Splitting input and target feature from both train and test arr.")
             x_train,y_train = train_arr[:,:-1],train_arr[:,-1]
@@ -76,7 +76,7 @@ class ModelTrainer:
 
             #save the trained model
             logging.info(f"Saving mode object")
-            utils.save_object(file_path=self.model_trainer_config.model_path, obj=model)
+            util.save_object(file_path=self.model_trainer_config.model_path, obj=model)
 
             #prepare artifact
             logging.info(f"Prepare the artifact")
